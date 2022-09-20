@@ -1,0 +1,21 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import type { Props as BaseHeadProps } from '../components/BaseHead.astro'
+
+export interface Props {
+    meta?: BaseHeadProps
+}
+
+const { meta } = Astro.props;
+---
+
+<html lang="pl">
+    <head>
+        <BaseHead {...meta} />
+    </head>
+    <body>
+        <main>
+            <slot />
+        </main>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+---
+export interface Props {
+    title?: string
+    description?: string
+    canonicalURL?: URL | string
+}
+
+const { canonicalURL = new URL(Astro.url.pathname, Astro.site) } = Astro.props;
+const title = Astro.props.title || "Sigma Galeria lamp i oświetlenia Toruń. ul. Lelewela 33, tel. 56 655 17 17, kom. 661-946-423"
+const description = Astro.props.description || "Sigma Galeria Lamp świadczy usługi w zakresie sprzedaży detalicznej i hurtowej wszelkiego rodzaju lamp oraz aranżacji oświetlenia. W zakres świadczonych usług wchodzi również obsługa techniczna (serwis techniczny) w zakresie tworzenia i naprawy lamp."
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<title>{title}</title>
+<meta name="description" content={description}>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
