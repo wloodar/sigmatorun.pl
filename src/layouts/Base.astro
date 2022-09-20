@@ -1,6 +1,11 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import Nav from '../components/Nav.astro';
 import type { Props as BaseHeadProps } from '../components/BaseHead.astro'
+
+import '../styles/app.css'
+import '../styles/fonts.css';
+import '../styles/tailwind.css'
 
 export interface Props {
     meta?: BaseHeadProps
@@ -14,6 +19,7 @@ const { meta } = Astro.props;
         <BaseHead {...meta} />
     </head>
     <body>
+        <Nav/>
         <main>
             <slot />
         </main>

@@ -1,0 +1,18 @@
+---
+import clsx from 'clsx'
+
+export interface Props {
+    type?: 'primary' | 'outline'
+    href?: string
+}
+
+const { props } = Astro;
+
+const type = props.type || 'primary'
+const Tag = props.href ? "a" : "button"
+
+---
+
+<Tag class={clsx('py-3 px-6 inline-block text-sm cursor-pointer', { 'bg-black text-white': type === 'primary' })}>
+    <slot />
+</Tag>
