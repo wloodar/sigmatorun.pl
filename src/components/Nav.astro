@@ -81,9 +81,9 @@ import { NavLink, ScrollTopLink } from './NavLink'
                 </div>
             </div>
             <div>
-                <Button href="#kontakt" type={'outline'} class="mr-2"
-                    >Kontakt</Button
-                >
+                <NavLink to={'kontakt'} client:load
+                    ><Button type={'outline'} class="mr-2">Kontakt</Button>
+                </NavLink>
                 <Button href={'https://maps.google.com'}>Dojazd</Button>
             </div>
         </div>

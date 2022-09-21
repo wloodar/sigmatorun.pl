@@ -27,7 +27,7 @@ export const NavLink = ({
     children,
     to,
     duration = 800,
-}: BaseLink & { activeClassName: string; to: string; duration?: number }) => {
+}: BaseLink & { activeClassName?: string; to: string; duration?: number }) => {
     return (
         <Link
             activeClass={activeClassName}

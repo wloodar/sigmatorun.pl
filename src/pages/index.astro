@@ -5,6 +5,7 @@ import Layout from '../layouts/Base.astro'
 import { H1, H2, H4, Paragraph } from '../components/typography'
 
 import shopImage from '../images/sklep-oswietleniowy-sigmatorun-wnetrze.jpg'
+import EcommerceWebsitePic from '../images/lampypolska-sklep-desktop-view.png'
 import Button from '../components/Button.astro'
 
 import BrandSlider from '../components/BrandSlider.astro'
@@ -183,6 +184,47 @@ const offerList: Array<OfferItem> = [
             <div class="wl-container py-10">
                 <div class="pt-10 pb-12">
                     <BrandSlider />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sklep" class="pt-28 wl-container pb-28">
+        <div class="mb-8 w-full text-center">
+            <img
+                src="/images/lampypolska-ikonka.png"
+                alt="Ikonka sklepu lampypolska.pl"
+                class="w-14 inline-block"
+            />
+        </div>
+        <div class="h-auto relative bg-stone-50">
+            <div class="flex pt-20">
+                <div class="max-w-lg px-20">
+                    <H2>Sklep internetowy Lampypolska.pl</H2>
+                    <ul class="mt-10">
+                        <li class="my-3 text-lg font-medium text-neutral-500">
+                            Wysyłka w 24h
+                        </li>
+                        <li class="my-3 text-lg font-medium text-neutral-500">
+                            Wygodne metody płatności:
+                        </li>
+                        <li class="my-3 text-lg font-medium text-neutral-500">
+                            (Przelewy24, PayPal)
+                        </li>
+                        <li class="my-3 text-lg font-medium text-neutral-500">
+                            Rabaty koszykowe
+                        </li>
+                    </ul>
+                    <Button href="https://lampypolska.pl" class="mt-10"
+                        >Zobacz sklep</Button
+                    >
+                </div>
+                <div class="flex-1">
+                    <Image
+                        src={EcommerceWebsitePic}
+                        format="webp"
+                        alt="Sklep internetowy Lampypolska.pl by sigmatorun.pl"
+                        class="border-t border-l border-stone-200"
+                    />
                 </div>
             </div>
         </div>
