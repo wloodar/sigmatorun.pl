@@ -49,135 +49,142 @@ const offerList: Array<OfferItem> = [
 ---
 
 <Layout>
-    <div class="wl-container relative overflow-hidden">
-        <div
-            class="absolute -top-full left-0 -bottom-full right-0 opacity-10 flex justify-between -z-10"
-        >
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    fill="#F1C21B"
-                    d="M60,-14.9C68.7,7,60.2,39,40,53.3C19.8,67.5,-12,63.9,-35.1,47.3C-58.3,30.7,-72.8,1.2,-65.5,-18.9C-58.2,-38.9,-29.1,-49.5,-1.7,-49C25.7,-48.4,51.4,-36.8,60,-14.9Z"
-                    transform="translate(100 100)"></path>
-            </svg>
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    fill="#F1C21B"
-                    d="M50.5,-55.2C61.5,-39.5,63.7,-19.8,63.8,0C63.8,19.8,61.7,39.7,50.7,55.6C39.7,71.5,19.8,83.5,3.4,80.1C-13.1,76.7,-26.1,57.9,-39.6,42C-53,26.1,-66.8,13.1,-69.7,-2.9C-72.6,-18.8,-64.6,-37.7,-51.1,-53.4C-37.7,-69.2,-18.8,-81.8,0.5,-82.3C19.8,-82.7,39.5,-71,50.5,-55.2Z"
-                    transform="translate(100 100)"></path>
-            </svg>
-        </div>
-        <div class="max-w-3xl m-auto text-center py-20 backdrop-blur-3xl">
-            <H1 className="!text-6xl"
-                >Sigma - Sklep z oświetleniem w Toruniu.</H1
+    <section id="home">
+        <div class="wl-container relative overflow-hidden">
+            <div
+                class="absolute -top-full left-0 -bottom-full right-0 opacity-10 flex justify-between -z-10 blur-xl"
             >
-        </div>
-    </div>
-    <div class="flex">
-        <div
-            class="bg-[url('/images/main-header.jpg')] bg-no-repeat bg-cover bg-bottom w-[50%]"
-        >
-        </div>
-        <div class="border-y border-stone-200 py-14 w-[50%]">
-            <div class="max-w-md ml-14">
-                <Paragraph className="mt-4"
-                    >Tysiące lamp dostępnych od ręki. Tysiące godzin doświadczeń
-                    z oświetleniem. Tysiące rozwiązań oświetleniowych.</Paragraph
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        fill="#F1C21B"
+                        d="M60,-14.9C68.7,7,60.2,39,40,53.3C19.8,67.5,-12,63.9,-35.1,47.3C-58.3,30.7,-72.8,1.2,-65.5,-18.9C-58.2,-38.9,-29.1,-49.5,-1.7,-49C25.7,-48.4,51.4,-36.8,60,-14.9Z"
+                        transform="translate(100 100)"></path>
+                </svg>
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        fill="#F1C21B"
+                        d="M50.5,-55.2C61.5,-39.5,63.7,-19.8,63.8,0C63.8,19.8,61.7,39.7,50.7,55.6C39.7,71.5,19.8,83.5,3.4,80.1C-13.1,76.7,-26.1,57.9,-39.6,42C-53,26.1,-66.8,13.1,-69.7,-2.9C-72.6,-18.8,-64.6,-37.7,-51.1,-53.4C-37.7,-69.2,-18.8,-81.8,0.5,-82.3C19.8,-82.7,39.5,-71,50.5,-55.2Z"
+                        transform="translate(100 100)"></path>
+                </svg>
+            </div>
+            <div class="max-w-3xl m-auto text-center py-20">
+                <H1 className="!text-6xl"
+                    >Sigma - Sklep z oświetleniem w Toruniu.</H1
                 >
-                <div class="mt-6">
-                    <Button class="px-14">Wyznacz trasę</Button>
-                    <Button type="outline" class="ml-2"
-                        >Skontaktuj się z nami</Button
+            </div>
+        </div>
+        <div class="flex">
+            <div
+                class="bg-[url('/images/main-header.jpg')] bg-no-repeat bg-cover bg-bottom w-[50%]"
+            >
+            </div>
+            <div class="border-y border-stone-200 py-14 w-[50%]">
+                <div class="max-w-md ml-14">
+                    <Paragraph className="mt-4"
+                        >Tysiące lamp dostępnych od ręki. Tysiące godzin
+                        doświadczeń z oświetleniem. Tysiące rozwiązań
+                        oświetleniowych.</Paragraph
                     >
-                </div>
-                <div class="mt-10 font-semibold">
-                    Galeria AMC
-                    <div>Joachima Lelewela 33</div>
-                    <div>87-100 Toruń</div>
+                    <div class="mt-6">
+                        <Button class="px-14">Wyznacz trasę</Button>
+                        <Button type="outline" class="ml-2"
+                            >Skontaktuj się z nami</Button
+                        >
+                    </div>
+                    <div class="mt-10 font-semibold">
+                        Galeria AMC
+                        <div>Joachima Lelewela 33</div>
+                        <div>87-100 Toruń</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="wl-container mt-32 flex items-center" id="oferta">
-        <div class="w-[50%]">
-            <!-- <div class="bg-stone-500 h-full"></div> -->
-            <div class="p-8 bg-primary">
-                <Image
-                    src={shopImage}
-                    alt="Wnętrze sklepu sigma w Toruniu"
-                    format="webp"
-                />
+    </section>
+    <section id="oferta">
+        <div class="wl-container mt-32 flex items-center">
+            <div class="w-[50%]">
+                <!-- <div class="bg-stone-500 h-full"></div> -->
+                <div class="p-8 bg-primary-yellow">
+                    <Image
+                        src={shopImage}
+                        alt="Wnętrze sklepu sigma w Toruniu"
+                        format="webp"
+                    />
+                </div>
+            </div>
+            <div class="flex-1">
+                <div class="max-w-md mx-auto">
+                    <H2>Nasza oferta</H2>
+                    <ul class="mt-8">
+                        {
+                            offerList.map(offer => (
+                                <li class="mt-6 flex font-medium">
+                                    <span class="w-6 h-6 flex items-center justify-center bg-primary-yellow rounded-full mr-5 text-black font-bold">
+                                        -&gt
+                                    </span>
+                                    {offer.title}
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="flex-1">
-            <div class="max-w-md mx-auto">
-                <H2>Nasza oferta</H2>
-                <ul class="mt-8">
+        <div class="wl-container mt-24">
+            <div class="pt-24 border-t border-stone-200">
+                <div class="grid grid-cols-12 gap-x-20">
                     {
                         offerList.map(offer => (
-                            <li class="mt-6 flex font-medium">
-                                <span class="w-6 h-6 flex items-center justify-center bg-primary rounded-full mr-5 text-black font-bold">
-                                    -&gt
-                                </span>
-                                {offer.title}
-                            </li>
+                            <div class="col-span-4 mb-28">
+                                <H4 className="min-h-[4rem] flex items-center">
+                                    <div class="mr-5 bg-primary-yellow p-2 rounded-full">
+                                        {' '}
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="feather feather-check w-4 h-auto"
+                                        >
+                                            <polyline points="20 6 9 17 4 12" />
+                                        </svg>{' '}
+                                    </div>
+                                    {offer.title}
+                                </H4>
+                                <Paragraph className="mt-4">
+                                    {offer.description}
+                                </Paragraph>
+                            </div>
                         ))
                     }
-                </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="wl-container mt-24">
+    </section>
+    <section id="marki">
         <div class="pt-24 border-t border-stone-200">
-            <div class="grid grid-cols-12 gap-x-20">
-                {
-                    offerList.map(offer => (
-                        <div class="col-span-4 mb-28">
-                            <H4 className="min-h-[4rem] flex items-center">
-                                <div class="mr-5 bg-primary p-2 rounded-full">
-                                    {' '}
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-check w-4 h-auto"
-                                    >
-                                        <polyline points="20 6 9 17 4 12" />
-                                    </svg>{' '}
-                                </div>
-                                {offer.title}
-                            </H4>
-                            <Paragraph className="mt-4">
-                                {offer.description}
-                            </Paragraph>
-                        </div>
-                    ))
-                }
+            <div class="wl-container">
+                <div class="max-w-lg m-auto text-center">
+                    <H2>Współpracujemy z wieloma topowymi markami</H2>
+                    <Paragraph className="mt-6"
+                        >Na przestrzeni działalności sklepu sigma, nawiązaliśmy
+                        stałe współprace z jednymi z największych marek branży
+                        oświetleniowej w Europie.</Paragraph
+                    >
+                </div>
             </div>
         </div>
-    </div>
-    <div class="pt-24 border-t border-stone-200">
-        <div class="wl-container">
-            <div class="max-w-lg m-auto text-center">
-                <H2>Współpracujemy z wieloma topowymi markami</H2>
-                <Paragraph className="mt-6"
-                    >Na przestrzeni działalności sklepu sigma, nawiązaliśmy
-                    stałe współprace z jednymi z największych marek branży
-                    oświetleniowej w Europie.</Paragraph
-                >
+        <div class="bg-primary-yellow mt-16 border-y border-primary-yellow-100">
+            <div class="wl-container py-10">
+                <div class="pt-10 pb-12">
+                    <BrandSlider />
+                </div>
             </div>
         </div>
-    </div>
-    <div class="bg-primary mt-16">
-        <div class="wl-container py-10">
-            <div class="pt-10 pb-12">
-                <BrandSlider />
-            </div>
-        </div>
-    </div>
+    </section>
 </Layout>

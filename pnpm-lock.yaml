@@ -9,12 +9,14 @@ specifiers:
   '@splidejs/splide-extension-auto-scroll': ^0.5.3
   '@tailwindcss/aspect-ratio': ^0.4.2
   '@types/react': ^18.0.20
+  '@types/react-scroll': ^1.8.4
   astro: ^1.2.7
   clsx: ^1.2.1
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.5.4
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-scroll: ^1.8.7
   tailwindcss: ^3.1.8
 
 dependencies:
@@ -28,11 +30,13 @@ dependencies:
   clsx: 1.2.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-scroll: 1.8.7_biqbaboplfbrettd7655fr4n2y
   tailwindcss: 3.1.8
 
 devDependencies:
   '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.1.8
   '@types/react': 18.0.20
+  '@types/react-scroll': 1.8.4
   prettier: 2.7.1
   prettier-plugin-astro: 0.5.4
 
@@ -695,6 +699,12 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
+    dev: true
+
+  /@types/react-scroll/1.8.4:
+    resolution: {integrity: sha512-DpHA9PYw42/rBrfKbGE/kAEvHRfyDL/ACfKB/ORWUYuCLi/yGrntxSzYXmg/7TLgQsJ5ma13GCDOzFSOz+8XOA==}
+    dependencies:
+      '@types/react': 18.0.20
     dev: true
 
   /@types/react/18.0.20:
@@ -2265,6 +2275,10 @@ packages:
       p-locate: 5.0.0
     dev: false
 
+  /lodash.throttle/4.1.1:
+    resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
+    dev: false
+
   /log-symbols/5.1.0:
     resolution: {integrity: sha512-l0x2DvrW294C9uDCoQe1VSU4gf529FkSZ6leBl4TiqZH/e+0R7hSfHQBNut2mNygDgHwvYHfFLn6Oxb3VWj2rA==}
     engines: {node: '>=12'}
@@ -3159,6 +3173,14 @@ packages:
       sisteransi: 1.0.5
     dev: false
 
+  /prop-types/15.8.1:
+    resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
+    dev: false
+
   /property-information/6.1.1:
     resolution: {integrity: sha512-hrzC564QIl0r0vy4l6MvRLhafmUowhO/O3KgVSoXIbbA2Sz4j8HGpJc6T2cubRVwMwpdiG/vKGfhT4IixmKN9w==}
     dev: false
@@ -3214,6 +3236,22 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-is/16.13.1:
+    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: false
+
+  /react-scroll/1.8.7_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-fBOIwweAlhicx8RqP9tQXn/Uhd+DTtVRjw+0VBsIn1Z+MjRYLhTZ0tMoTAU1vOD3dce8mI6copexI4yWII+Luw==}
+    peerDependencies:
+      react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      lodash.throttle: 4.1.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react/17.0.2:
