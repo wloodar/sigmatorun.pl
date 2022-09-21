@@ -24,6 +24,36 @@ import { NavLink, ScrollTopLink } from './NavLink'
 ---
 
 <nav class="bg-white border-b border-stone-100 fixed top-0 right-0 left-0 z-10">
+    <div class="bg-stone-100 py-2 pl-5 text-neutral-600">
+        <div class="wl-container">
+            <ul class="text-xs font-semibold flex justify-center">
+                <li class="inline-block">
+                    <span>Tel-1:</span><a
+                        href="tel:56 655 17 17"
+                        class="hover:text-primary-yellow-400"
+                    >
+                        56 655 17 17</a
+                    >
+                </li>
+                <li class="inline-block ml-5">
+                    <span>Tel-1:</span><a
+                        href="tel:661 946 423"
+                        class="hover:text-primary-yellow-400"
+                    >
+                        661 946 423</a
+                    >
+                </li>
+                <li class="inline-block ml-5">
+                    <span>Email:</span><a
+                        href="mailto:sigmatorun@gmail.com"
+                        class="hover:text-primary-yellow-400"
+                    >
+                        sigmatorun@gmail.com</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class="wl-container py-4">
         <div class="flex items-center justify-between">
             <div class="flex items-stretch">
@@ -38,8 +68,8 @@ import { NavLink, ScrollTopLink } from './NavLink'
                                 <li class="inline-block h-full">
                                     <NavLink
                                         to={navItem.href}
-                                        className="px-6 flex items-center h-full hover:bg-stone-50 font-medium cursor-pointer"
-                                        activeClassName="bg-stone-50"
+                                        className="px-6 flex items-center h-full hover:bg-stone-50 font-medium cursor-pointer text-neutral-600"
+                                        activeClassName="bg-stone-50 text-black !font-semibold"
                                         client:load
                                     >
                                         {navItem.title}
