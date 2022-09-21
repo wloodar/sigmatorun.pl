@@ -15,9 +15,9 @@ type HeadingProps = {
 )
 
 const fontSizes = {
-    h1: 'leading-none text-3xl sm:text-5xl font-bold',
-    h2: 'leading-none text-2xl sm:text-4xl font-semibold',
-    h3: 'leading-none text-xl sm:text-3xl font-semibold',
+    h1: 'leading-none text-3xl sm:text-5xl font-semibold',
+    h2: 'leading-none text-2xl sm:text-4xl font-medium',
+    h3: 'leading-none text-xl sm:text-3xl font-medium',
     h4: 'leading-none text-lg sm:text-2xl font-medium',
     h5: 'leading-none text-lg sm:text-xl font-medium',
 }
@@ -73,12 +73,17 @@ type ParagraphProps = {
 )
 
 function Paragraph({
-    size = 'text-base',
+    size = 'text-lg',
     className,
-    colorClassName = 'text-secondary',
+    colorClassName = 'text-stone-800',
     ...rest
 }: ParagraphProps) {
-    return <p className={clsx(size, colorClassName, className)} {...rest}></p>
+    return (
+        <p
+            className={clsx(size, colorClassName, 'font-medium', className)}
+            {...rest}
+        ></p>
+    )
 }
 
 export { H1, H2, H3, H4, H5, Paragraph }

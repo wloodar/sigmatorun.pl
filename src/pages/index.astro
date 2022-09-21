@@ -1,12 +1,59 @@
 ---
+import { Image, Picture } from '@astrojs/image/components'
+
 import Layout from '../layouts/Base.astro'
-import { H1 } from '../components/typography'
+import { H1, Paragraph } from '../components/typography'
+
+import heroImage from '../images/sklep-oswietleniowy-sigmatorun-wnetrze.jpg'
+import Button from '../components/Button.astro'
 ---
 
 <Layout>
-    <div class="wl-container">
-        <div class="mt-20 max-w-2xl m-auto text-center">
-            <H1>Sklep oświetleniowy Toruń</H1>
+    <div class="relative wl-container">
+        <div
+            class="absolute top-0 left-0 bottom-0 right-0 opacity-10 flex justify-between -z-10"
+        >
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    fill="#F1C21B"
+                    d="M60,-14.9C68.7,7,60.2,39,40,53.3C19.8,67.5,-12,63.9,-35.1,47.3C-58.3,30.7,-72.8,1.2,-65.5,-18.9C-58.2,-38.9,-29.1,-49.5,-1.7,-49C25.7,-48.4,51.4,-36.8,60,-14.9Z"
+                    transform="translate(100 100)"></path>
+            </svg>
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    fill="#F1C21B"
+                    d="M50.5,-55.2C61.5,-39.5,63.7,-19.8,63.8,0C63.8,19.8,61.7,39.7,50.7,55.6C39.7,71.5,19.8,83.5,3.4,80.1C-13.1,76.7,-26.1,57.9,-39.6,42C-53,26.1,-66.8,13.1,-69.7,-2.9C-72.6,-18.8,-64.6,-37.7,-51.1,-53.4C-37.7,-69.2,-18.8,-81.8,0.5,-82.3C19.8,-82.7,39.5,-71,50.5,-55.2Z"
+                    transform="translate(100 100)"></path>
+            </svg>
+        </div>
+        <div class="py-28 max-w-xl m-auto text-center">
+            <H1>Twój sklep z oświetleniem w Toruniu.</H1>
+            <Paragraph className="mt-4"
+                >Tysiące lamp dostępnych od ręki. Tysiące godzin doświadczeń z
+                oświetleniem. Tysiące rozwiązań oświetleniowych.</Paragraph
+            >
+            <div class="mt-8">
+                <Button type="outline" class="mr-2"
+                    >Skontaktuj się z nami</Button
+                >
+                <Button class="ml-2">Wyznacz trasę</Button>
+            </div>
+            <div class="mt-4 text-sm text-neutral-400">
+                Joachima Lelewela 33, 87-100 Toruń
+            </div>
         </div>
     </div>
+    <div
+        class="bg-[url('/images/main-header.jpg')] bg-no-repeat bg-cover bg-center aspect-w-3 aspect-h-1"
+    >
+    </div>
+
+    <div class="mt-20">
+        <div class="wl-container"></div>
+    </div>
+    <!-- <div class="pt-20 bg-gradient-to-t from-stone-900 to-stone-800">
+        <div class="wl-container">
+            <Image src={heroImage} alt="Wnętrze sklepu oświetleniowego Sigma w Toruniu" format="webp" />
+        </div>
+    </div> -->
 </Layout>

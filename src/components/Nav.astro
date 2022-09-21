@@ -3,25 +3,25 @@ import Button from './Button.astro'
 
 const navList = [
     {
-        title: "Początek",
-        href: "#"
+        title: 'Początek',
+        href: '#',
     },
     {
-        title: "Oferta",
-        href: "#oferta"
+        title: 'Oferta',
+        href: '#oferta',
     },
     {
-        title: "Marki",
-        href: "#marki"
+        title: 'Marki',
+        href: '#marki',
     },
     {
-        title: "Sklep",
-        href: "#sklep"
-    }
+        title: 'Sklep',
+        href: '#sklep',
+    },
 ]
 ---
 
-<nav class="bg-white border-b border-stone-100">
+<nav class="bg-white border-b border-stone-100 fixed top-0 right-0 left-0 z-10">
     <div class="wl-container py-4">
         <div class="flex items-center justify-between">
             <div class="flex items-stretch">
@@ -29,10 +29,22 @@ const navList = [
                     href="/"
                     title="Początek strony sigmatorun.pl"
                     class="uppercase tracking-wider py-2 inline-block border-r border-stone-100 px-5 text-xl font-bold hover:bg-stone-50"
-                    >Sigma</a>
+                    >Sigma</a
+                >
                 <div class="ml-8">
                     <ul class="h-full">
-                        {navList.map(navItem => <li class="inline-block h-full"><a href={navItem.href} class="px-6 flex items-center h-full hover:bg-stone-50 font-medium">{navItem.title}</a></li>)}
+                        {
+                            navList.map(navItem => (
+                                <li class="inline-block h-full">
+                                    <a
+                                        href={navItem.href}
+                                        class="px-6 flex items-center h-full hover:bg-stone-50 font-medium"
+                                    >
+                                        {navItem.title}
+                                    </a>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
             </div>

@@ -3,5 +3,6 @@
         "moduleResolution": "node",
         "allowJs": true
     },
-    "extends": "astro/tsconfigs/strict"
+    "extends": "astro/tsconfigs/strict",
+    "types": ["@astrojs/image/client"]
 }
