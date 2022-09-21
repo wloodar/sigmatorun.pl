@@ -2,10 +2,50 @@
 import { Image, Picture } from '@astrojs/image/components'
 
 import Layout from '../layouts/Base.astro'
-import { H1, Paragraph } from '../components/typography'
+import { H1, H2, H4, Paragraph } from '../components/typography'
 
-import heroImage from '../images/sklep-oswietleniowy-sigmatorun-wnetrze.jpg'
+import shopImage from '../images/sklep-oswietleniowy-sigmatorun-wnetrze.jpg'
 import Button from '../components/Button.astro'
+
+import BrandSlider from '../components/BrandSlider.astro'
+
+type OfferItem = {
+    title: string
+    description: string
+}
+
+const offerList: Array<OfferItem> = [
+    {
+        title: 'Realizacja lampy na indywidualne zamówienie',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at lectus dui. Duis placerat consectetur risus ut posuere.',
+    },
+    {
+        title: 'Projektowanie oświetlenia w domach i mieszkaniach',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at lectus dui. Duis placerat consectetur risus ut posuere.',
+    },
+    {
+        title: 'Tysiące lamp dostępnych od ręki',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at lectus dui. Duis placerat consectetur risus ut posuere.',
+    },
+    {
+        title: 'Montaż',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at lectus dui. Duis placerat consectetur risus ut posuere.',
+    },
+    {
+        title: 'Obsługa inwestycji',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at lectus dui. Duis placerat consectetur risus ut posuere.',
+    },
+    {
+        title: 'Serwis',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at lectus dui. Duis placerat consectetur risus ut posuere.',
+    },
+]
 ---
 
 <Layout>
@@ -26,8 +66,10 @@ import Button from '../components/Button.astro'
                     transform="translate(100 100)"></path>
             </svg>
         </div>
-        <div class="max-w-3xl m-auto text-center py-20">
-            <H1 className="!text-6xl">Twój sklep z oświetleniem w Toruniu.</H1>
+        <div class="max-w-3xl m-auto text-center py-20 backdrop-blur-3xl">
+            <H1 className="!text-6xl"
+                >Sigma - Sklep z oświetleniem w Toruniu.</H1
+            >
         </div>
     </div>
     <div class="flex">
@@ -55,46 +97,87 @@ import Button from '../components/Button.astro'
             </div>
         </div>
     </div>
-    <!-- <div class="relative wl-container">
-        <div
-            class="absolute top-0 left-0 bottom-0 right-0 opacity-10 flex justify-between -z-10"
-        >
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    fill="#F1C21B"
-                    d="M60,-14.9C68.7,7,60.2,39,40,53.3C19.8,67.5,-12,63.9,-35.1,47.3C-58.3,30.7,-72.8,1.2,-65.5,-18.9C-58.2,-38.9,-29.1,-49.5,-1.7,-49C25.7,-48.4,51.4,-36.8,60,-14.9Z"
-                    transform="translate(100 100)"></path>
-            </svg>
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    fill="#F1C21B"
-                    d="M50.5,-55.2C61.5,-39.5,63.7,-19.8,63.8,0C63.8,19.8,61.7,39.7,50.7,55.6C39.7,71.5,19.8,83.5,3.4,80.1C-13.1,76.7,-26.1,57.9,-39.6,42C-53,26.1,-66.8,13.1,-69.7,-2.9C-72.6,-18.8,-64.6,-37.7,-51.1,-53.4C-37.7,-69.2,-18.8,-81.8,0.5,-82.3C19.8,-82.7,39.5,-71,50.5,-55.2Z"
-                    transform="translate(100 100)"></path>
-            </svg>
+    <div class="wl-container mt-32 flex items-center" id="oferta">
+        <div class="w-[50%]">
+            <!-- <div class="bg-stone-500 h-full"></div> -->
+            <div class="p-8 bg-primary">
+                <Image
+                    src={shopImage}
+                    alt="Wnętrze sklepu sigma w Toruniu"
+                    format="webp"
+                />
+            </div>
         </div>
-        <div class="py-28 max-w-xl m-auto text-center">
-            <H1>Twój sklep z oświetleniem w Toruniu.</H1>
-            <Paragraph className="mt-4"
-                >Tysiące lamp dostępnych od ręki. Tysiące godzin doświadczeń z
-                oświetleniem. Tysiące rozwiązań oświetleniowych.</Paragraph
-            >
-            <div class="mt-8">
-                <Button type="outline" class="mr-2"
-                    >Skontaktuj się z nami</Button
+        <div class="flex-1">
+            <div class="max-w-md mx-auto">
+                <H2>Nasza oferta</H2>
+                <ul class="mt-8">
+                    {
+                        offerList.map(offer => (
+                            <li class="mt-6 flex font-medium">
+                                <span class="w-6 h-6 flex items-center justify-center bg-primary rounded-full mr-5 text-black font-bold">
+                                    -&gt
+                                </span>
+                                {offer.title}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wl-container mt-24">
+        <div class="pt-24 border-t border-stone-200">
+            <div class="grid grid-cols-12 gap-x-20">
+                {
+                    offerList.map(offer => (
+                        <div class="col-span-4 mb-28">
+                            <H4 className="min-h-[4rem] flex items-center">
+                                <div class="mr-5 bg-primary p-2 rounded-full">
+                                    {' '}
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="feather feather-check w-4 h-auto"
+                                    >
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg>{' '}
+                                </div>
+                                {offer.title}
+                            </H4>
+                            <Paragraph className="mt-4">
+                                {offer.description}
+                            </Paragraph>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+    <div class="pt-24 border-t border-stone-200">
+        <div class="wl-container">
+            <div class="max-w-lg m-auto text-center">
+                <H2>Współpracujemy z wieloma topowymi markami</H2>
+                <Paragraph className="mt-6"
+                    >Na przestrzeni działalności sklepu sigma, nawiązaliśmy
+                    stałe współprace z jednymi z największych marek branży
+                    oświetleniowej w Europie.</Paragraph
                 >
-                <Button class="ml-2">Wyznacz trasę</Button>
-            </div>
-            <div class="mt-4 text-sm text-neutral-400">
-                Joachima Lelewela 33, 87-100 Toruń
             </div>
         </div>
     </div>
-    <div
-        class="bg-[url('/images/main-header.jpg')] bg-no-repeat bg-cover bg-center aspect-w-3 aspect-h-1"
-    >
+    <div class="bg-primary mt-16">
+        <div class="wl-container py-10">
+            <div class="pt-10 pb-12">
+                <BrandSlider />
+            </div>
+        </div>
     </div>
-
-    <div class="mt-20">
-        <div class="wl-container"></div>
-    </div> -->
 </Layout>

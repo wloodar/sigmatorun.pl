@@ -7,7 +7,11 @@ module.exports = {
         fontFamily: {
             sans: ['Manrope', ...defaultTheme.fontFamily.sans],
         },
-        extend: {},
+        extend: {
+            colors: {
+                primary: '#fef9ec',
+            },
+        },
     },
     corePlugins: {
         aspectRatio: false,

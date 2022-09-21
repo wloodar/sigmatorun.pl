@@ -1,0 +1,45 @@
+<div class="splide">
+    <div class="splide__track">
+        <ul class="splide__list flex items-center">
+            {
+                Array(11)
+                    .fill(null)
+                    .map((_, i) => (
+                        <li
+                            class="splide__slide rounded-lg overflow-hidden border border-stone-100 px-6 py-4 bg-white"
+                            data-index={i}
+                        >
+                            <img src={`/images/brands/${i + 1}.jpg`} />
+                        </li>
+                    ))
+            }
+        </ul>
+    </div>
+</div>
+
+<script>
+    import Splide from '@splidejs/splide'
+    import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
+    import '@splidejs/splide/css'
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const splide = new Splide('.splide', {
+            type: 'loop',
+            gap: 50,
+            drag: 'free',
+            focus: 'center',
+            arrows: false,
+            perPage: 5,
+            autoScroll: {
+                speed: 0.3,
+                pauseOnFocus: false,
+                pauseOnHover: false,
+                rewind: false,
+            },
+            pauseOnFocus: false,
+            pauseOnHover: false,
+        })
+
+        splide.mount({ AutoScroll })
+    })
+</script>
