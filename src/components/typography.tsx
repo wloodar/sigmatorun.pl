@@ -18,7 +18,7 @@ const fontSizes = {
     h1: '!leading-[1.3] text-3xl sm:text-5xl font-semibold',
     h2: 'leading-none text-2xl sm:text-4xl font-semibold',
     h3: 'leading-none text-xl sm:text-3xl font-semibold',
-    h4: 'leading-none text-lg sm:text-2xl font-semibold',
+    h4: 'leading-none text-xl sm:text-2xl font-semibold',
     h5: 'leading-none text-lg sm:text-xl font-semibold',
 }
 

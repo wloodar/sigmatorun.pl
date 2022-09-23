@@ -22,14 +22,29 @@
     import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
     import '@splidejs/splide/css'
 
+    const slidesPerPage = {
+        1024: 5,
+        768: 4,
+        640: 3
+    }
+
+    let pageW = window.innerWidth;
+
+    let perPage = 2;
+    for (const [windowSize, slidesNumber] of Object.entries(slidesPerPage)) {
+        if (pageW > Number.parseInt(windowSize)) {
+            perPage = slidesNumber;
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         const splide = new Splide('.splide', {
             type: 'loop',
-            gap: 50,
+            gap: perPage * 10,
             drag: 'free',
             focus: 'center',
             arrows: false,
-            perPage: 5,
+            perPage: perPage,
             autoScroll: {
                 speed: 0.3,
                 pauseOnFocus: false,

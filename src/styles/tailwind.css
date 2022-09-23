@@ -6,4 +6,8 @@
     .wl-container {
         @apply max-w-[1450px] m-auto px-[25px] md:px-[50px];
     }
+
+    .container-padding {
+        @apply px-[25px] md:px-[50px];
+    }
 }

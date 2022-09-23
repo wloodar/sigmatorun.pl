@@ -24,7 +24,7 @@ import { NavLink, ScrollTopLink } from './NavLink'
 ---
 
 <nav class="bg-white border-b border-stone-100 fixed top-0 right-0 left-0 z-10">
-    <div class="bg-stone-100 py-2 pl-5 text-neutral-600">
+    <div class="bg-stone-100 py-2 pl-5 text-neutral-600 hidden sm:block">
         <div class="wl-container">
             <ul class="text-xs font-semibold flex justify-center">
                 <li class="inline-block">
@@ -62,7 +62,7 @@ import { NavLink, ScrollTopLink } from './NavLink'
                     client:load>Sigma</ScrollTopLink
                 >
                 <div class="ml-8">
-                    <ul class="h-full">
+                    <ul class="h-full hidden lg:block">
                         {
                             navList.map(navItem => (
                                 <li class="inline-block h-full">
@@ -82,7 +82,7 @@ import { NavLink, ScrollTopLink } from './NavLink'
             </div>
             <div>
                 <NavLink to={'kontakt'} client:load
-                    ><Button type={'outline'} class="mr-2">Kontakt</Button>
+                    ><Button type={'outline'} class="hidden sm:inline-block mr-2">Kontakt</Button>
                 </NavLink>
                 <Button href={'https://maps.google.com'}>Dojazd</Button>
             </div>

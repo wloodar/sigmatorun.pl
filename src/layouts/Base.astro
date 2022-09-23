@@ -21,17 +21,17 @@ const { meta } = Astro.props
     </head>
     <body>
         <Nav />
-        <main class="mt-[112px]">
+        <main class="mt-[78px] sm:mt-[112px]">
             <slot />
         </main>
-        <div class="wl-container pt-12 pb-24" id="kontakt">
+        <div class="wl-container pt-12 pb-10 sm:pb-24" id="kontakt">
             <div>
                 <H2>Kontakt</H2>
             </div>
-            <div class="flex items-center">
+            <div class="sm:flex sm:items-center">
                 <div class="flex-1">
-                    <ul class="grid grid-cols-12 gap-x-6">
-                        <li class="col-span-4">
+                    <ul class="grid grid-cols-12 mt-6 xl:mt-0 gap-y-6 xl:gap-y-0 gap-x-6">
+                        <li class="col-span-12 md:col-span-6 xl:col-span-4">
                             <a
                                 href="tel:56 655 17 17"
                                 class="hover:text-primary-yellow-400 border border-stone-200 block text-center py-4 font-semibold hover:border-primary-yellow-100"
@@ -39,7 +39,7 @@ const { meta } = Astro.props
                                 56 655 17 17</a
                             >
                         </li>
-                        <li class="col-span-4">
+                        <li class="col-span-12 md:col-span-6 xl:col-span-4">
                             <a
                                 href="tel:661 946 423"
                                 class="hover:text-primary-yellow-400 border border-stone-200 block text-center py-4 font-semibold hover:border-primary-yellow-100"
@@ -47,7 +47,7 @@ const { meta } = Astro.props
                                 661 946 423</a
                             >
                         </li>
-                        <li class="col-span-4">
+                        <li class="col-span-12 md:col-span-12 xl:col-span-4">
                             <a
                                 href="mailto:sigmatorun@gmail.com"
                                 class="hover:text-primary-yellow-400 border border-stone-200 block text-center py-4 font-semibold hover:border-primary-yellow-100"
@@ -58,13 +58,13 @@ const { meta } = Astro.props
                     </ul>
                     <a
                         href="https://www.facebook.com/Sigma-Galeria-Lamp-1566203500315512/?fref=ts"
-                        class="mt-3 font-medium flex items-center text-neutral-400 hover:text-primary-yellow-400"
+                        class="mt-8 sm:mt-3 font-medium flex items-center text-neutral-400 hover:text-primary-yellow-400"
                         ><span
                             class="w-10 h-[1px] inline-block bg-stone-200 mr-5"
                         ></span> Facebok Sigma Galeria Lamp</a
                     >
                 </div>
-                <div class="w-[300px] pl-10 ml-10 border-l border-stone-200">
+                <div class="max-w-xs sm:max-w-full sm:w-[300px] mt-12 sm:mt-0 pl-10 sm:ml-10 border-l border-stone-200">
                     <H5>Lokalizacja</H5>
                     <Paragraph className="!text-base mt-4"
                         >Nasz sklep mieści się w galerii AMC w Toruniu na ulicy
