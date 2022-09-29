@@ -1,0 +1,57 @@
+---
+import { Image } from '@astrojs/image/components'
+import GoogleStaticMap from '../images/sigmatorun-google-maps.jpg'
+---
+
+<div class="bg-black">
+    <div class="mapouter opacity-100">
+        <div
+            class="gmap_canvas relative"
+            id="directionMap"
+            data-src="https://maps.google.com/maps?q=sigma%20toru%C5%84&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        >
+            <Image
+                src={GoogleStaticMap}
+                format="webp"
+                alt="Lokalizacja sklepu Sigma w Toruniu na mapie"
+                class="w-full h-full object-cover"
+                fit="cover"
+                position="center"
+            />
+        </div>
+        <a href="https://www.embedgooglemap.net" style="opacity: 0;"
+            >google maps widget</a
+        >
+    </div>
+    <style>
+        .mapouter {
+            position: relative;
+            text-align: right;
+            height: 500px;
+            width: 100%;
+        }
+
+        .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+    <script is:inline>
+        window.addEventListener('load', function (e) {
+            setTimeout(function () {
+                const mapContainer = document.getElementById('directionMap')
+
+                const iframe = document.createElement('iframe')
+                iframe.src = mapContainer.getAttribute('data-src')
+                iframe.style.width = '100%'
+                iframe.style.height = '500px'
+                iframe.id = 'gmap_canvas'
+
+                mapContainer.innerHTML = ''
+                mapContainer.appendChild(iframe)
+            }, 1500)
+        })
+    </script>
+</div>

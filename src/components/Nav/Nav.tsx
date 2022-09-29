@@ -1,4 +1,3 @@
-import React from 'react'
 import clsx from 'clsx'
 import { Link, animateScroll as scroll } from 'react-scroll'
 import { useAtom } from 'jotai'
@@ -9,10 +8,6 @@ const menuIconBaseClassname =
 
 const NavIcon = () => {
     const [isMenuOpen, setIsMenuOpen] = useAtom(isMenuOpenAtom)
-
-    React.useEffect(() => {
-        console.log(isMenuOpen)
-    }, [isMenuOpen])
 
     return (
         <button
@@ -124,7 +119,7 @@ const NavItems = ({
     return (
         <>
             {navList.map(navItem => (
-                <li className={clsx(className)}>
+                <li className={clsx(className)} key={navItem.href}>
                     <NavLink
                         to={navItem.href}
                         className={clsx(linkClassName)}
