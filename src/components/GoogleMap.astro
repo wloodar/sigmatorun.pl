@@ -41,19 +41,42 @@ import GoogleStaticMap from '../images/sigmatorun-google-maps.jpg'
     <script is:inline>
         const map = document.getElementById('directionMap')
 
-        const maplistner = function (e) {
-            const iframe = document.createElement('iframe')
-            iframe.title = 'Lokalizacja sklepu Sigma Toruń na mapie'
-            iframe.src = map.getAttribute('data-src')
-            iframe.style.width = '100%'
-            iframe.style.height = '500px'
-            iframe.id = 'gmap_canvas'
+        const observer = new IntersectionObserver(
+            entries => {
+                const entry = entries[0]
 
-            map.innerHTML = ''
-            map.appendChild(iframe)
-            map.removeEventListener('mouseover', maplistner)
+                if (entry.isIntersecting) {
+                    const iframe = document.createElement('iframe')
+                    iframe.title = 'Lokalizacja sklepu Sigma Toruń na mapie'
+                    iframe.src = map.getAttribute('data-src')
+                    iframe.style.width = '100%'
+                    iframe.style.height = '500px'
+                    iframe.id = 'gmap_canvas'
+
+                    map.innerHTML = ''
+                    map.appendChild(iframe)
+                    observer.unobserve(entry.target)
+                }
+            },
+            { threshold: [0] },
+        )
+
+        if (!!window.IntersectionObserver) {
+            const maplistner = function () {
+                const iframe = document.createElement('iframe')
+                iframe.title = 'Lokalizacja sklepu Sigma Toruń na mapie'
+                iframe.src = map.getAttribute('data-src')
+                iframe.style.width = '100%'
+                iframe.style.height = '500px'
+                iframe.id = 'gmap_canvas'
+
+                map.innerHTML = ''
+                map.appendChild(iframe)
+                map.removeEventListener('mouseover', maplistner)
+            }
+
+            map.addEventListener('mouseover', maplistner)
         }
-
-        map.addEventListener('mouseover', maplistner)
+        observer.observe(map)
     </script>
 </div>
