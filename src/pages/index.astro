@@ -79,7 +79,9 @@ const offerList: Array<OfferItem> = [
                 class="bg-[url('/images/main-header.jpg')] bg-no-repeat bg-cover bg-bottom w-full sm:w-[50%] aspect-w-3 aspect-h-2 sm:aspect-none"
             >
             </div>
-            <div class="border-y border-stone-200 pt-2 pb-6 sm:py-14 w-full sm:w-[50%]">
+            <div
+                class="border-y border-stone-200 pt-2 pb-6 sm:py-14 w-full sm:w-[50%]"
+            >
                 <div class="max-w-xl container-padding m-auto sm:m-0 sm:pl-14">
                     <Paragraph className="mt-4 !text-base sm:!text-lg"
                         >Tysiące lamp dostępnych od ręki. Tysiące godzin
@@ -87,8 +89,13 @@ const offerList: Array<OfferItem> = [
                         oświetleniowych.</Paragraph
                     >
                     <div class="mt-6">
-                        <Button class="px-14 block w-full lg:w-auto lg:inline-block">Wyznacz trasę</Button>
-                        <Button type="outline" class="w-full mt-4 lg:mt-0 lg:w-auto lg:ml-2"
+                        <Button
+                            class="px-14 block w-full lg:w-auto lg:inline-block"
+                            >Wyznacz trasę</Button
+                        >
+                        <Button
+                            type="outline"
+                            class="w-full mt-4 lg:mt-0 lg:w-auto lg:ml-2"
                             >Skontaktuj się z nami</Button
                         >
                     </div>
@@ -102,7 +109,9 @@ const offerList: Array<OfferItem> = [
         </div>
     </section>
     <section id="oferta">
-        <div class="wl-container mt-10 md:mt-20 lg:mt-32 flex-col-reverse lg:flex-row flex items-center">
+        <div
+            class="wl-container mt-10 md:mt-20 lg:mt-32 flex-col-reverse lg:flex-row flex items-center"
+        >
             <div class="lg:w-[50%]">
                 <!-- <div class="bg-stone-500 h-full"></div> -->
                 <div class="p-8 bg-primary-yellow">
@@ -110,6 +119,7 @@ const offerList: Array<OfferItem> = [
                         src={shopImage}
                         alt="Wnętrze sklepu sigma w Toruniu"
                         format="webp"
+                        quality={10}
                     />
                 </div>
             </div>
@@ -201,16 +211,24 @@ const offerList: Array<OfferItem> = [
                 <div class="max-w-lg px-8 xl:px-20">
                     <H2>Sklep internetowy Lampypolska.pl</H2>
                     <ul class="mt-10">
-                        <li class="my-3 xl:text-lg font-medium text-neutral-500">
+                        <li
+                            class="my-3 xl:text-lg font-medium text-neutral-500"
+                        >
                             Wysyłka w 24h
                         </li>
-                        <li class="my-3 xl:text-lg font-medium text-neutral-500">
+                        <li
+                            class="my-3 xl:text-lg font-medium text-neutral-500"
+                        >
                             Wygodne metody płatności:
                         </li>
-                        <li class="my-3 xl:text-lg font-medium text-neutral-500">
+                        <li
+                            class="my-3 xl:text-lg font-medium text-neutral-500"
+                        >
                             (Przelewy24, PayPal)
                         </li>
-                        <li class="my-3 xl:text-lg font-medium text-neutral-500">
+                        <li
+                            class="my-3 xl:text-lg font-medium text-neutral-500"
+                        >
                             Rabaty koszykowe
                         </li>
                     </ul>
@@ -218,12 +236,15 @@ const offerList: Array<OfferItem> = [
                         >Zobacz sklep</Button
                     >
                 </div>
-                <div class="mt-14 pb-8 pl-8 xl:p-0 xl:mt-0 xl:flex-1 -mr-14 xl:mr-0">
+                <div
+                    class="mt-14 pb-8 pl-8 xl:p-0 xl:mt-0 xl:flex-1 -mr-14 xl:mr-0"
+                >
                     <Image
                         src={EcommerceWebsitePic}
                         format="webp"
                         alt="Sklep internetowy Lampypolska.pl by sigmatorun.pl"
                         class="border-t border-l border-stone-200"
+                        quality={15}
                     />
                 </div>
             </div>

@@ -1,5 +1,6 @@
 ---
 import Button from './Button.astro'
+import { NavIcon } from './NavIcon'
 
 const navList = [
     {
@@ -58,7 +59,7 @@ import { NavLink, ScrollTopLink } from './NavLink'
         <div class="flex items-center justify-between">
             <div class="flex items-stretch">
                 <ScrollTopLink
-                    className="uppercase tracking-wider py-2 inline-block border-r border-stone-100 px-5 text-xl font-bold hover:bg-stone-50"
+                    className="uppercase tracking-wider py-2 inline-block sm:border-r border-stone-100 sm:px-5 text-xl font-bold hover:bg-stone-50"
                     client:load>Sigma</ScrollTopLink
                 >
                 <div class="ml-8">
@@ -80,11 +81,19 @@ import { NavLink, ScrollTopLink } from './NavLink'
                     </ul>
                 </div>
             </div>
-            <div>
-                <NavLink to={'kontakt'} client:load
-                    ><Button type={'outline'} class="hidden sm:inline-block mr-2">Kontakt</Button>
-                </NavLink>
-                <Button href={'https://maps.google.com'}>Dojazd</Button>
+            <div class="flex items-center">
+                <div class="mr-4 sm:mr-8 lg:hidden">
+                    <NavIcon client:load />
+                </div>
+                <div>
+                    <NavLink to={'kontakt'} client:load
+                        ><Button
+                            type={'outline'}
+                            class="hidden sm:inline-block mr-2">Kontakt</Button
+                        >
+                    </NavLink>
+                    <Button href={'https://maps.google.com'}>Dojazd</Button>
+                </div>
             </div>
         </div>
     </div>

@@ -31,6 +31,7 @@ export const NavLink = ({
     return (
         <Link
             activeClass={activeClassName}
+            href={`#${to}`}
             to={to}
             spy={true}
             smooth="easeInOutQuint"

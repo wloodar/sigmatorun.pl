@@ -9,7 +9,10 @@
                             class="splide__slide rounded-lg overflow-hidden border border-primary-yellow-200 px-6 py-4 bg-white"
                             data-index={i}
                         >
-                            <img src={`/images/brands/${i + 1}.jpg`} />
+                            <img
+                                src={`/images/brands/${i + 1}.jpg`}
+                                alt="Logo producenta"
+                            />
                         </li>
                     ))
             }
@@ -25,15 +28,15 @@
     const slidesPerPage = {
         1024: 5,
         768: 4,
-        640: 3
+        640: 3,
     }
 
-    let pageW = window.innerWidth;
+    let pageW = window.innerWidth
 
-    let perPage = 2;
+    let perPage = 2
     for (const [windowSize, slidesNumber] of Object.entries(slidesPerPage)) {
         if (pageW > Number.parseInt(windowSize)) {
-            perPage = slidesNumber;
+            perPage = slidesNumber
         }
     }
 
@@ -45,6 +48,7 @@
             focus: 'center',
             arrows: false,
             perPage: perPage,
+            pagination: false,
             autoScroll: {
                 speed: 0.3,
                 pauseOnFocus: false,
