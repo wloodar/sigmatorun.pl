@@ -6,7 +6,7 @@ import type { Props as BaseHeadProps } from '../components/BaseHead.astro'
 import '../styles/app.css'
 import '../styles/fonts.css'
 import '../styles/tailwind.css'
-import { H2, H5, Paragraph } from '../components/typography'
+import { H2, H3, Paragraph } from '../components/typography'
 
 export interface Props {
     meta?: BaseHeadProps
@@ -69,7 +69,7 @@ const { meta } = Astro.props
                 <div
                     class="max-w-xs sm:max-w-full sm:w-[300px] mt-12 sm:mt-0 pl-10 sm:ml-10 border-l border-stone-200"
                 >
-                    <H5>Lokalizacja</H5>
+                    <H3>Lokalizacja</H3>
                     <Paragraph className="!text-base mt-4"
                         >Nasz sklep mieści się w galerii AMC w Toruniu na ulicy
                         Lelewela 33.</Paragraph
