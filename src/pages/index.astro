@@ -1,12 +1,13 @@
 ---
-import { Image, Picture } from '@astrojs/image/components'
+import { Image } from '@astrojs/image/components'
 
 import Layout from '../layouts/Base.astro'
 import { H1, H2, H4, Paragraph } from '../components/typography'
 
 import shopImage from '../images/sklep-oswietleniowy-sigmatorun-wnetrze.jpg'
 import EcommerceWebsitePic from '../images/lampypolska-sklep-desktop-view.png'
-import Button from '../components/Button.astro'
+import { Button } from '../components/Button'
+import { NavLink } from '../components/Nav/Nav'
 
 import BrandSlider from '../components/BrandSlider.astro'
 
@@ -90,20 +91,29 @@ const offerList: Array<OfferItem> = [
                     >
                     <div class="mt-6">
                         <Button
-                            class="px-14 block w-full lg:w-auto lg:inline-block"
+                            href="https://www.google.com/maps?ll=53.024528,18.60796&z=13&t=m&hl=pl-PL&gl=US&mapclient=embed&cid=17330451646591468385"
+                            rel="noreferrer noopener"
+                            target="_blank"
+                            className="px-14 block w-full text-center lg:w-auto lg:inline-block"
                             >Wyznacz trasę</Button
                         >
-                        <Button
-                            type="outline"
-                            class="w-full mt-4 lg:mt-0 lg:w-auto lg:ml-2"
-                            >Skontaktuj się z nami</Button
+                        <NavLink
+                            client:load
+                            to="kontakt"
+                            aria-label="Sekcja kontakt"
                         >
+                            <Button
+                                type="outline"
+                                className="w-full mt-4 lg:mt-0 lg:w-auto lg:ml-2"
+                                >Skontaktuj się z nami
+                            </Button>
+                        </NavLink>
                     </div>
-                    <div class="mt-6 lg:mt-10 font-semibold">
-                        Galeria AMC
-                        <div>Joachima Lelewela 33</div>
-                        <div>87-100 Toruń</div>
-                    </div>
+                </div>
+                <div class="mt-6 lg:mt-10 font-semibold container-padding">
+                    Galeria AMC
+                    <div>Joachima Lelewela 33</div>
+                    <div>87-100 Toruń</div>
                 </div>
             </div>
         </div>
@@ -235,8 +245,10 @@ const offerList: Array<OfferItem> = [
                             Rabaty koszykowe
                         </li>
                     </ul>
-                    <Button href="https://lampypolska.pl" class="mt-10"
-                        >Zobacz sklep</Button
+                    <Button
+                        href="https://lampypolska.pl"
+                        target="_blank"
+                        className="mt-10">Zobacz sklep</Button
                     >
                 </div>
                 <div

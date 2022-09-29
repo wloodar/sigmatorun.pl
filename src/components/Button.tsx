@@ -27,6 +27,7 @@ const Button = ({
                 className,
             )}
             href={href && href}
+            {...rest}
         >
             {children}
         </Tag>

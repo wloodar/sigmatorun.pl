@@ -10,4 +10,8 @@
     .container-padding {
         @apply px-[25px] md:px-[50px];
     }
+
+    .border-hover {
+        @apply relative border-b-2 border-b-transparent pb-2 before:absolute before:bottom-[-2px] before:left-0 before:right-0 before:h-[2px] before:w-0 before:bg-white before:transition-[width] before:duration-300 before:ease-in-out hover:before:w-full;
+    }
 }

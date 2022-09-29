@@ -1,29 +1,9 @@
 ---
-import Button from './Button.astro'
-import { NavIcon } from './NavIcon'
-
-const navList = [
-    {
-        title: 'Początek',
-        href: 'home',
-    },
-    {
-        title: 'Oferta',
-        href: 'oferta',
-    },
-    {
-        title: 'Marki',
-        href: 'marki',
-    },
-    {
-        title: 'Sklep',
-        href: 'sklep',
-    },
-]
-
-import { NavLink, ScrollTopLink } from './NavLink'
+import { Button } from '../Button'
+import { NavIcon, NavLink, NavItems, NavResponsive, ScrollTopLink } from './Nav'
 ---
 
+<NavResponsive client:load />
 <nav class="bg-white border-b border-stone-100 fixed top-0 right-0 left-0 z-10">
     <div class="bg-stone-100 py-2 pl-5 text-neutral-600 hidden sm:block">
         <div class="wl-container">
@@ -55,7 +35,7 @@ import { NavLink, ScrollTopLink } from './NavLink'
             </ul>
         </div>
     </div>
-    <div class="wl-container py-4">
+    <div class="wl-container py-4 z-10">
         <div class="flex items-center justify-between">
             <div class="flex items-stretch">
                 <ScrollTopLink
@@ -64,20 +44,12 @@ import { NavLink, ScrollTopLink } from './NavLink'
                 >
                 <div class="ml-8">
                     <ul class="h-full hidden lg:block">
-                        {
-                            navList.map(navItem => (
-                                <li class="inline-block h-full">
-                                    <NavLink
-                                        to={navItem.href}
-                                        className="px-6 flex items-center h-full hover:bg-stone-50 font-medium cursor-pointer text-neutral-600"
-                                        activeClassName="bg-stone-50 text-black !font-semibold"
-                                        client:load
-                                    >
-                                        {navItem.title}
-                                    </NavLink>
-                                </li>
-                            ))
-                        }
+                        <NavItems
+                            client:load
+                            className="inline-block h-full"
+                            linkClassName="px-6 flex items-center h-full hover:bg-stone-50 font-medium cursor-pointer text-neutral-600"
+                            activeClassName="bg-stone-50 text-black !font-semibold"
+                        />
                     </ul>
                 </div>
             </div>
@@ -92,10 +64,15 @@ import { NavLink, ScrollTopLink } from './NavLink'
                         client:load
                         ><Button
                             type={'outline'}
-                            class="hidden sm:inline-block mr-2">Kontakt</Button
+                            className="hidden sm:inline-block mr-2"
+                            >Kontakt</Button
                         >
                     </NavLink>
-                    <Button href={'https://maps.google.com'}>Dojazd</Button>
+                    <Button
+                        href="https://www.google.com/maps?ll=53.024528,18.60796&z=13&t=m&hl=pl-PL&gl=US&mapclient=embed&cid=17330451646591468385"
+                        rel="noreferrer noopener"
+                        target="_blank">Dojazd</Button
+                    >
                 </div>
             </div>
         </div>
