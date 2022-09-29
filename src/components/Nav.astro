@@ -86,7 +86,10 @@ import { NavLink, ScrollTopLink } from './NavLink'
                     <NavIcon client:load />
                 </div>
                 <div>
-                    <NavLink to={'kontakt'} client:load
+                    <NavLink
+                        to={'kontakt'}
+                        aria-label="Sekcja kontakt"
+                        client:load
                         ><Button
                             type={'outline'}
                             class="hidden sm:inline-block mr-2">Kontakt</Button

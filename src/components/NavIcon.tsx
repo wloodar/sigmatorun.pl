@@ -8,7 +8,11 @@ const NavIcon = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false)
 
     return (
-        <button className="p-3" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button
+            aria-label="Ikonka nawigacji"
+            className="p-3"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
             <div className="w-[30px] ">
                 <div
                     className={clsx('mb-[6px]', menuIconBaseClassname, {

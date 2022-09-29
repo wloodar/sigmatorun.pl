@@ -23,6 +23,7 @@ const Tag = props.href ? 'a' : 'button'
         },
         props.class,
     )}
+    href={props.href && props.href}
 >
     <slot />
 </Tag>

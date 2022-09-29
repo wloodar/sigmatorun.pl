@@ -27,6 +27,7 @@ export const NavLink = ({
     children,
     to,
     duration = 800,
+    ...rest
 }: BaseLink & { activeClassName?: string; to: string; duration?: number }) => {
     return (
         <Link
@@ -38,6 +39,7 @@ export const NavLink = ({
             offset={-200}
             duration={duration}
             className={className}
+            {...rest}
         >
             {children}
         </Link>
