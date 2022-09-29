@@ -5,6 +5,7 @@ import Layout from '../layouts/Base.astro'
 import { H1, H2, H4, Paragraph } from '../components/typography'
 
 import shopImage from '../images/sklep-oswietleniowy-sigmatorun-wnetrze.jpg'
+import EcommerceWebsiteIcon from '../images/lampypolska-ikonka.png'
 import EcommerceWebsitePic from '../images/lampypolska-sklep-desktop-view.png'
 import { Button } from '../components/Button'
 import { NavLink } from '../components/Nav/Nav'
@@ -213,8 +214,10 @@ const offerList: Array<OfferItem> = [
     </section>
     <section id="sklep" class="pt-16 xl:pt-28 wl-container pb-6 xl:pb-28">
         <div class="mb-8 w-full text-center">
-            <img
-                src="/images/lampypolska-ikonka.png"
+            <Image
+                src={EcommerceWebsiteIcon}
+                format="webp"
+                quality={30}
                 alt="Ikonka sklepu lampypolska.pl"
                 class="w-12 xl:w-14 inline-block"
             />
@@ -255,6 +258,7 @@ const offerList: Array<OfferItem> = [
                     class="mt-14 pb-8 pl-8 xl:p-0 xl:mt-0 xl:flex-1 -mr-14 xl:mr-0"
                 >
                     <Image
+                        style={{ contentVisibility: 'unset' }}
                         src={EcommerceWebsitePic}
                         format="webp"
                         alt="Sklep internetowy Lampypolska.pl by sigmatorun.pl"

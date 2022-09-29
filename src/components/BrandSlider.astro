@@ -78,7 +78,6 @@
         const observer = new IntersectionObserver((entries, observer) => {
             if (!entries[0].isIntersecting) return
 
-            console.log('works!')
             loadSliderImages()
             observer.unobserve(entries[0].target)
         })
