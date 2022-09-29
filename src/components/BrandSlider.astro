@@ -1,4 +1,4 @@
-<div class="splide">
+<div class="splide" id="splide-manufacturers">
     <div class="splide__track">
         <ul class="splide__list flex items-center">
             {
@@ -10,7 +10,9 @@
                             data-index={i}
                         >
                             <img
-                                src={`/images/brands/${i + 1}.jpg`}
+                                class="splide-slide-image transition-all duration-500 ease-in-out"
+                                style={{ opacity: 0 }}
+                                data-src={`/images/brands/${i + 1}.jpg`}
                                 alt="Logo producenta"
                             />
                         </li>
@@ -62,4 +64,27 @@
 
         splide.mount({ AutoScroll })
     })
+
+    const loadSliderImages = () => {
+        document.querySelectorAll('.splide-slide-image').forEach(img => {
+            if (img instanceof HTMLImageElement) {
+                img.src = img.dataset.src!
+                img.style.opacity = '1'
+            }
+        })
+    }
+
+    if (!!window.IntersectionObserver) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            if (!entries[0].isIntersecting) return
+
+            console.log('works!')
+            loadSliderImages()
+            observer.unobserve(entries[0].target)
+        })
+
+        observer.observe(document.getElementById('splide-manufacturers')!)
+    } else {
+        loadSliderImages()
+    }
 </script>
