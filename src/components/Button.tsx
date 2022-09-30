@@ -1,17 +1,19 @@
 import clsx from 'clsx'
 
-const Button = ({
+const Button = <K extends keyof JSX.IntrinsicElements>({
     type = 'primary',
+    tag,
     className,
     href,
     children,
     ...rest
 }: {
     type?: string
+    tag: K
     className?: string
     children: React.ReactNode
     href?: string
-}) => {
+} & JSX.IntrinsicElements[K]): JSX.Element => {
     const Tag = href ? 'a' : 'button'
 
     return (
